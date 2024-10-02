@@ -6,11 +6,26 @@
   </head>
   <body>
     <a-scene>
-      <!-- Skybox -->
-      <a-sky color="#87CEEB"></a-sky>
+        <a-assets></a-assets>
+            <img id="sky" src="sky.jpg">
+            <img id="grass" src="grass-texture.jpg">
+        </a-assets>
 
-      <!-- Plan (herbe) -->
-      <a-plane src="grass-texture.jpg" rotation="-90 0 0" width="100" height="100"></a-plane>
+        <!-- Caméra Orbit autour du cube -->
+        <a-entity id="camera-rig">
+            <a-camera position="0 2 1"></a-camera>
+        </a-entity>
+
+        <!-- Skybox avec cubemap -->
+        <a-sky src="#sky"></a-sky>
+
+        <!-- Plan (herbe) -->
+        <a-plane src="#grass" rotation="-90 0 0" repeat= "1000 1000" width="4500" height="4500"></a-plane>
+
+        <!-- Cube (Joueur) -->
+        <a-box id="player" position="0 0.5 0" color="#4CC3D9" width= "0.5" height="0.5" depth="0.5" ></a-box></a-box>
+
+        <script src="player.js"></script>
     </a-scene>
   </body>
 </html>
