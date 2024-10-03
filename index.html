@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <title>Exercice 1: Plan et Skybox</title>
-  </head>
-  <body>
-    <a-scene>
-        <a-assets></a-assets>
-            <img id="sky" src="sky.jpg">
-            <img id="grass" src="grass-texture.jpg">
-        </a-assets>
 
-        <!-- Caméra Orbit autour du cube -->
-        <a-entity id="camera-rig">
-            <a-camera position="0 2 1"></a-camera>
-        </a-entity>
+<head>
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  <script src="player.js"></script>
+  <title>Exercice 1: Plan et Skybox</title>
+</head>
 
-        <!-- Skybox avec cubemap -->
-        <a-sky src="#sky"></a-sky>
+<body>
+  <a-scene>
+    <a-assets>
+      <img id="sky" src="sky.jpg">
+      <img id="grass" src="grass-texture.jpg">
+    </a-assets>
 
-        <!-- Plan (herbe) -->
-        <a-plane src="#grass" rotation="-90 0 0" repeat= "1000 1000" width="4500" height="4500"></a-plane>
+    <!-- Caméra Orbit autour du cube -->
+    <a-entity id="camera-rig">
+      <a-entity camera look-controls></a-entity>
+    </a-entity>
 
-        <!-- Cube (Joueur) -->
-        <a-box id="player" position="0 0.5 0" color="#4CC3D9" width= "0.5" height="0.5" depth="0.5" ></a-box></a-box>
+    <!-- Skybox avec cubemap -->
+    <a-sky src="#sky"></a-sky>
 
-        <script src="player.js"></script>
-    </a-scene>
-  </body>
+    <!-- Plan (herbe) -->
+    <a-plane src="#grass" rotation="-90 0 0" repeat="1000 1000" width="4500" height="4500"></a-plane>
+
+    <!-- Cube (Joueur) -->
+    <a-box id="player" position="0 0.25 0" color="#4CC3D9" width="0.5" height="0.5" depth="0.5"></a-box>
+  </a-scene>
+</body>
+
 </html>
